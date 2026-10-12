@@ -228,6 +228,113 @@
       nav { padding: 1.2rem 1.5rem; }
       .nav-links { gap: 1.2rem; }
     }
+  
+    /* MOBILE REFINEMENTS */
+    @media (max-width: 600px) {
+      html { scroll-padding-top: 6.5rem; }
+      body { overflow-x: clip; }
+      nav {
+        padding: 0.8rem 1rem 0.7rem;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.55rem;
+        background: rgba(9,9,9,0.96);
+        -webkit-backdrop-filter: blur(14px);
+        backdrop-filter: blur(14px);
+      }
+      .nav-logo { align-self: flex-start; font-size: 1rem; line-height: 1.2; }
+      .nav-links {
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        gap: clamp(0.3rem, 2vw, 0.75rem);
+      }
+      .nav-links a {
+        display: inline-block;
+        font-size: clamp(0.53rem, 2.45vw, 0.68rem);
+        letter-spacing: 0.045em;
+        white-space: nowrap;
+      }
+      .achievements-nav::after { left: -0.25rem; right: -0.25rem; }
+
+      .hero {
+        height: auto;
+        min-height: 100vh;
+        min-height: 100svh;
+        padding: 8.75rem 1.25rem 4.5rem;
+        align-items: flex-end;
+      }
+      .hero-content { width: 100%; max-width: 100%; }
+      .hero-eyebrow { font-size: 0.62rem; letter-spacing: 0.13em; line-height: 1.65; }
+      h1 { font-size: clamp(3rem, 14vw, 4.4rem); line-height: 0.99; overflow-wrap: anywhere; }
+      .hero-sub { max-width: 32rem; font-size: 0.9rem; line-height: 1.7; }
+      .hero-scroll { display: none; }
+
+      .about { padding: 3.5rem 1.25rem; }
+      .about-left { margin-bottom: 2.25rem; }
+      .about h2, h2 { font-size: clamp(1.7rem, 7.5vw, 2.25rem); }
+      .about-text { font-size: 0.9rem; line-height: 1.8; }
+      .about-right {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.9rem;
+        padding-top: 2rem;
+      }
+      .stat { min-width: 0; gap: 0.35rem; }
+      .stat-num { font-size: clamp(1.8rem, 8vw, 2.35rem); }
+      .stat-label { font-size: 0.59rem; line-height: 1.5; letter-spacing: 0.055em; overflow-wrap: anywhere; }
+
+      .disciplines-wrap { padding: 0 1.25rem 3.5rem; }
+      .disciplines-grid { margin-top: 1.5rem; }
+      .discipline { padding: 1.5rem 1.25rem; }
+      .disc-num { font-size: 2rem; }
+      .disc-title { font-size: 1.12rem; }
+      .disc-desc { font-size: 0.82rem; }
+      .disc-tag { font-size: 0.58rem; }
+
+      .gallery-header { padding: 3.5rem 1.25rem 2rem; }
+      .masonry { columns: 2; column-gap: 6px; padding: 0 6px 6px; }
+      .photo-card { margin-bottom: 6px; }
+      .photo-overlay { opacity: 1; padding: 0.75rem; background: linear-gradient(to top, rgba(9,9,9,0.82) 0%, rgba(9,9,9,0.12) 58%, transparent 100%); }
+      .photo-title { font-size: 0.82rem; line-height: 1.25; }
+      .photo-tag { font-size: 0.55rem; letter-spacing: 0.07em; line-height: 1.35; }
+      .photo-card::after { bottom: 5px; right: 5px; font-size: 0.48rem; letter-spacing: 0.04em; }
+
+      .contact { padding: 4rem 1.25rem; }
+      .contact-sub { font-size: 0.88rem; }
+      .contact-link { max-width: 100%; font-size: clamp(0.82rem, 4vw, 1rem); overflow-wrap: anywhere; }
+      footer { padding: 1.5rem 1rem; flex-direction: column; gap: 0.5rem; text-align: center; line-height: 1.6; }
+
+      .lightbox { padding: 3.5rem 0 7rem; }
+      .lightbox img { max-width: calc(100vw - 1rem); max-height: calc(100svh - 11rem); }
+      .lb-close { top: 0.8rem; right: 1rem; font-size: 2rem; padding: 0.25rem; }
+      .lb-nav { font-size: 2rem; padding: 0.4rem; }
+      .lb-prev { left: 0.1rem; }
+      .lb-next { right: 0.1rem; }
+      .lb-caption { width: calc(100% - 4rem); bottom: 1.25rem; }
+      .lb-caption .photo-title { font-size: 0.95rem; }
+      .lb-caption .photo-tag { font-size: 0.62rem; }
+      .lb-watermark { right: 0.5rem; bottom: 5.25rem; max-width: 55%; font-size: 0.48rem; letter-spacing: 0.07em; text-align: right; }
+      #about, #work, #contact { scroll-margin-top: 6.5rem; }
+    }
+
+    @media (max-width: 380px) {
+      .nav-links a { font-size: 0.52rem; letter-spacing: 0.025em; }
+      .about, .disciplines-wrap, .contact { padding-left: 1rem; padding-right: 1rem; }
+      .masonry { columns: 1; }
+      .about-right { gap: 0.65rem; }
+      .stat-label { font-size: 0.55rem; }
+    }
+
+    @media (hover: none) {
+      .photo-card:hover img { transform: none; }
+      .photo-card:hover .photo-overlay { opacity: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+
   </style>
 
 <script type="application/ld+json">
