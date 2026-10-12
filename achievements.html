@@ -197,6 +197,87 @@
       main { padding: 0 1.5rem 5rem; }
       footer { padding: 1.5rem; flex-direction: column; gap: 0.4rem; text-align: center; }
     }
+  
+    /* MOBILE REFINEMENTS */
+    @media (max-width: 600px) {
+      html { scroll-padding-top: 6.5rem; }
+      body { overflow-x: clip; }
+      nav {
+        padding: 0.8rem 1rem 0.7rem;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.55rem;
+        background: rgba(9,9,9,0.96);
+        -webkit-backdrop-filter: blur(14px);
+        backdrop-filter: blur(14px);
+      }
+      .nav-logo { align-self: flex-start; font-size: 1rem; line-height: 1.2; }
+      .nav-links {
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        gap: clamp(0.3rem, 2vw, 0.75rem);
+      }
+      .nav-links a {
+        display: inline-block;
+        font-size: clamp(0.53rem, 2.45vw, 0.68rem);
+        letter-spacing: 0.045em;
+        white-space: nowrap;
+      }
+
+      .hero {
+        min-height: 54vh;
+        min-height: 54svh;
+        padding: 8.75rem 1.1rem 3rem;
+        align-items: flex-end;
+      }
+      .hero-content { width: 100%; max-width: 100%; }
+      .hero-eyebrow { font-size: 0.58rem; letter-spacing: 0.13em; line-height: 1.6; }
+      h1 { font-size: clamp(2.65rem, 12vw, 4rem); line-height: 1; overflow-wrap: anywhere; }
+      .hero-sub { font-size: 0.9rem; line-height: 1.7; }
+      .hero-count { margin-top: 1.25rem; font-size: 1.2rem; }
+
+      main { padding: 0 1rem 4rem; }
+      .intro-row { padding: 3rem 0 1.75rem; gap: 1rem; }
+      .intro-row h2 { font-size: clamp(1.6rem, 7vw, 2.1rem); line-height: 1.2; }
+      .intro-note { font-size: 0.78rem; line-height: 1.7; max-width: 100%; }
+      .timeline { padding: 2rem 0 0.5rem; }
+      .timeline::before { left: 21px; top: 2rem; bottom: 1rem; }
+      .achievement {
+        grid-template-columns: 44px minmax(0, 1fr);
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+      }
+      .achievement:nth-child(n) .year { grid-column: 1; grid-row: 1; width: 44px; height: 44px; font-size: 0.68rem; }
+      .achievement:nth-child(n) .achievement-card { grid-column: 2; grid-row: 1; min-width: 0; padding: 1rem; text-align: left; }
+      .achievement:nth-child(n) .achievement-spacer { display: none; }
+      .achievement-card { overflow-wrap: anywhere; }
+      .achievement-type { font-size: 0.56rem; letter-spacing: 0.12em; line-height: 1.5; }
+      .achievement-title { font-size: clamp(1.02rem, 4.2vw, 1.22rem); line-height: 1.25; }
+      .achievement-desc { font-size: 0.78rem; line-height: 1.7; }
+      .achievement-meta { font-size: 0.58rem; letter-spacing: 0.08em; line-height: 1.5; }
+      .closing { padding: 3.5rem 0 1.5rem; }
+      .closing h2 { font-size: clamp(1.75rem, 7.5vw, 2.4rem); }
+      .closing p { font-size: 0.84rem; line-height: 1.7; }
+      footer { padding: 1.5rem 1rem; flex-direction: column; gap: 0.5rem; text-align: center; line-height: 1.6; }
+    }
+
+    @media (max-width: 360px) {
+      nav { padding-left: 0.8rem; padding-right: 0.8rem; }
+      .nav-links { gap: 0.25rem; }
+      .nav-links a { font-size: 0.5rem; letter-spacing: 0.02em; }
+      main { padding-left: 0.75rem; padding-right: 0.75rem; }
+      .achievement { grid-template-columns: 40px minmax(0, 1fr); gap: 0.6rem; }
+      .timeline::before { left: 19px; }
+      .achievement:nth-child(n) .year { width: 40px; height: 40px; }
+      .achievement:nth-child(n) .achievement-card { padding: 0.85rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+
   </style>
 </head>
 <body>
